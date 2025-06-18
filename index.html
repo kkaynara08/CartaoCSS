@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cartão de Visitas Digital</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      background-color: #a0e6db; /* verde água claro */
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card-container {
+      width: 600px;
+      height: 320px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .card.flipped {
+      transform: rotateX(180deg);
+    }
+
+    .visit-card {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      background: #20B2AA; /* verde água */
+      border: 2px solid #15867f; /* tom mais escuro */
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      backface-visibility: hidden;
+      color: #fff;
+    }
+
+    .front {
+      display: flex;
+    }
+
+    .front img {
+      height: 250px;
+      width: 250px;
+      border-radius: 50%;
+      border: 5px solid #15867f;
+      object-fit: cover;
+    }
+
+    .front h1 {
+      margin-bottom: 10px;
+    }
+
+    .front h3 {
+      margin-bottom: 10px;
+      color: #e6f9f8;
+    }
+
+    .info-contato p {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .links {
+      margin-top: 15px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .links img {
+      width: 30px;
+      height: 30px;
+    }
+
+    .back {
+      transform: rotateX(180deg);
+      text-align: center;
+      justify-content: center;
+      flex-direction: column;
+      display: flex;
+      padding: 20px;
+      gap: 10px;
+      overflow-y: auto;
+    }
+
+    .back h2 {
+      margin-bottom: 10px;
+    }
+
+    .back p {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 14px;
+      color: #eee;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    footer img {
+      width: 20px;
+      height: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card-container" onclick="document.querySelector('.card').classList.toggle('flipped')">
+    <div class="card">
+      <div class="visit-card front">
+        <img src="WhatsApp Image 2025-06-07 at 09.27.29 (1).jpeg" alt="Foto de Kaynara Queiroz">
+        <div class="descrição">
+          <h1>Kaynara Queiroz</h1>
+          <h3>Arquiteta</h3>
+          <div class="info-contato">
+            <p>Telefone: (55) 85 988856511</p>
+            <p>Email: queirozkaynara@gmail.com</p>
+          </div>
+          <div class="links">
+            <a href="https://www.instagram.com/kkaynara_/" target="_blank">
+              <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram">
+            </a>
+            <a href="https://github.com/kkaynara08" target="_blank">
+              <img src="https://cdn-icons-png.flaticon.com/512/733/733609.png" alt="GitHub">
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="visit-card back">
+        <h2>Sobre Mim</h2>
+        <p>Olá, meu nome é Kaynara Queiroz. Sou estudante do IFCE – Campus Maranguape, atualmente tenho 17 anos e estou no 3º ano do ensino médio integrado.</p>
+
+<p>Tenho interesse em Arquitetura e Urbanismo e pretendo seguir carreira nessa área, unindo criatividade, técnica e responsabilidade social em meus futuros projetos.</p>
+        <footer>© 2025 Kaynara Queiroz</footer>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Lupa">
+  </footer>
+</body>
+</html>
